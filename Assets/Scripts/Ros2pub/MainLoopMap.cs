@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainSetup : MonoBehaviour
+public class MainLoopMap : MonoBehaviour
 {
+
     // Start is called before the first frame update
+    public MapReader mapreader;
     void Start()
     {
-        // ImportMap();
-        // ReadMap();
+        //mapの読み込み
+        mapreader.ImportMap();
+        print("MAP LOAD DONE");
+
+        //
         
+        //
+
     }
 
     // Update is called once per frame
@@ -18,3 +25,4 @@ public class MainSetup : MonoBehaviour
         
     }
 }
+
