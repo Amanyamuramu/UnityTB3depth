@@ -13,7 +13,7 @@ public class Tb3cmdSubscriber : MonoBehaviour
 
     void turtlesim_move(TwistMsg Msg)
     {
-        print(Msg);
+        // print(Msg);
         cube.velocity = transform.forward * (float)Msg.linear.x;
         cube.angularVelocity = new Vector3(0, (float)Msg.angular.z, 0);
     }

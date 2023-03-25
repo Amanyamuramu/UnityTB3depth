@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/depthVRScene.unity
+- path: Assets/Scenes/depthVRmapScene_VRlocomotion.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

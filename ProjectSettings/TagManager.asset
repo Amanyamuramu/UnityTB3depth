@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Locomotion
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: wave
+    uniqueID: 1586396587
     locked: 0
