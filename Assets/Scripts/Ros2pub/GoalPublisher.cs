@@ -70,8 +70,9 @@ public class GoalPublisher : MonoBehaviour
         pose.orientation.w = 0;
 
         PoseStampedMsg poseStampedMsg = new PoseStampedMsg(header, pose); 
-        var topicName = _topicNames[_TBSelector.value];
-        _ros.Publish(topicName, poseStampedMsg);
+        // var topicName = _topicNames[_TBSelector.value];
+        // var topicName = _topicName;
+        _ros.Publish("/initialpose", poseStampedMsg);
 
         Debug.Log(poseStampedMsg.pose);
     }

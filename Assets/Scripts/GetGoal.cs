@@ -16,10 +16,10 @@ public class GetGoal : MonoBehaviour
 
     [SerializeField] GameObject _goalPrefab;//送信するゴールマーカー
     [SerializeField] GoalPublisher _goalPublisher;
-    // [SerializeField] TextMeshProUGUI _cursorPositionText;
-    // [SerializeField] TextMeshProUGUI _goalPosRotText;
+
     public GetCursorPosition _getCursorPosition;
-    // [SerializeField] GetCursorPosition _getCursorPosition;
+    public RayCastFromOculus _getLaserPosition;//Oculusコントローラーレイ用設定
+
     [SerializeField] GameObject _tb3;
     Vector3 _raycastHitPoint;
     Vector3 _raycastHitPointOnButtonDown;
@@ -27,77 +27,63 @@ public class GetGoal : MonoBehaviour
     [NonSerialized] public Vector3 _goalRotation; 
     Quaternion _lookRotation;
     bool _isMouseButtonDown;
+    bool _isTriggerOn;
     Vector3 _hitPos;
     [SerializeField] MapReader _mapReader;
     
     void Start()
     {
         _arrowObj.SetActive(false);
-
-        // _cursorPositionText.text = "Cursor: ";
-        // _goalPosRotText.text = "Goal: ";
     }
 
     void Update()
     {
-        //ここにオキュラスとの当たり判定からVector3型を作成する
-        _raycastHitPoint = _getCursorPosition.GetMousePosition();
-
-        _cursorObj.transform.position = _raycastHitPoint;
-
-        // マップ用に座標の基準点を変換する
+        // _raycastHitPoint = _getCursorPosition.GetMousePosition();
+        _raycastHitPoint = _getLaserPosition.GetControllerRayPosition();
+        _cursorObj.transform.position = new Vector3(_raycastHitPoint.x,0.5f,_raycastHitPoint.z);
         _hitPos = _raycastHitPoint;    
         _hitPos.x -= _mapReader._originPos.x;
         _hitPos.y -= _mapReader._originPos.y;
         _hitPos.z -= _mapReader._originPos.z;
         _hitPos.x *= -1f;
-
-        // _cursorPositionText.text = "Cursor: " + _hitPos.ToString();
-        
         GetGoalPosDir(); 
     }
 
     void GetGoalPosDir() {
-        if (Input.GetMouseButtonDown(0))
+        Vector3 direction = new Vector3(0f,0f,0f);
+        // if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+        if(OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
-            if (EventSystem.current.IsPointerOverGameObject()) return;
-            if (_isMouseButtonDown) return;
-
             _raycastHitPointOnButtonDown = _raycastHitPoint;
-
             // 向きを決めるための矢印オブジェクトを表示する
             _arrowObj.SetActive(true);
             _arrowObj.transform.position = _raycastHitPoint;
-
-            _isMouseButtonDown = true;
-        }
-        
-
-        if (_isMouseButtonDown)
-        {
-            var direction = _raycastHitPoint - _arrowObj.transform.position;
-            direction.y = 0;
-            _lookRotation = Quaternion.LookRotation(direction, Vector3.up);
-            _arrowObj.transform.rotation = Quaternion.Lerp(_arrowObj.transform.rotation, _lookRotation, 0.1f);
+            _isTriggerOn = true;
         }
 
-
-        if (Input.GetMouseButtonUp(0))
+        if (_isTriggerOn)
         {
-            if (!_isMouseButtonDown) return;
+            Vector2 stickInput = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch);
+            var angle = Mathf.Atan2(stickInput.x, stickInput.y) * Mathf.Rad2Deg;
+            direction = new Vector3(0f,angle,0f);
+            _arrowObj.transform.rotation = Quaternion.Euler(direction);
 
+        }
+
+
+        // if (OVRInput.GetUp(OVRInput.RawButton.RIndexTrigger)){
+        if(OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        {
             _arrowObj.SetActive(false);
-
             _goalPosition = new Vector3(_hitPos.x, 0, _hitPos.z);
-            _goalRotation = Quaternion.Lerp(_arrowObj.transform.rotation, _lookRotation, 0.1f).eulerAngles;
+            _goalRotation = direction;
 
             //objに格納すると同時に生成
             GameObject obj = Instantiate(_goalPrefab, _raycastHitPointOnButtonDown, Quaternion.Euler(_goalRotation));
+            // GameObject obj = Instantiate(_goalPrefab, _raycastHit, Quaternion.Euler(_goalRotation));
 
             _goalPublisher.SendGoal(_goalPosition, _goalRotation);
-            //rayから取得されたpositionとrotationをパブリッシュする
-
-            _isMouseButtonDown = false;
+            _isTriggerOn = false;
         }
     }
 
