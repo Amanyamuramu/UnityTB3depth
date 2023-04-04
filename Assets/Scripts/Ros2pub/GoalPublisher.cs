@@ -66,15 +66,19 @@ public class GoalPublisher : MonoBehaviour
         pose.position.z = 0;
         pose.orientation.x = 0;
         pose.orientation.y = 0;
-        pose.orientation.z = goalRotation.y;
+        //convert deg to rad
+        pose.orientation.z = goalRotation.y* Mathf.Deg2Rad + Mathf.PI;
+        // pose.orientation.z = 1.54f;
         pose.orientation.w = 0;
+        print("pose of rotation");
+        print(pose.orientation.z);
 
         PoseStampedMsg poseStampedMsg = new PoseStampedMsg(header, pose); 
         // var topicName = _topicNames[_TBSelector.value];
         // var topicName = _topicName;
-        _ros.Publish("/initialpose", poseStampedMsg);
+        _ros.Publish("TB1/pose", poseStampedMsg);
 
-        Debug.Log(poseStampedMsg.pose);
+        // Debug.Log(poseStampedMsg.pose);
     }
 
 }
