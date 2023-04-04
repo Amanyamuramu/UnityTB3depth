@@ -17,8 +17,8 @@ public class PoseSubscriber : MonoBehaviour
 
     void MoveTurtlesim(TwistMsg Msg)
     {      
-        var linearVelocity = (float)Msg.linear.x;
-        var angularVelocity = -(float)Msg.angular.z;
+        var linearVelocity = (float)Msg.linear.x*0.8f;
+        var angularVelocity = -1f*(float)Msg.angular.z;
         _rb.velocity = _tb3.transform.rotation * new Vector3(0, 0, linearVelocity);
         _rb.angularVelocity = new Vector3(0, angularVelocity, 0);
     }

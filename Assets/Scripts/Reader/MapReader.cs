@@ -16,6 +16,9 @@ public class MapReader : MonoBehaviour
     [SerializeField] GameObject _tb3Obj;
     [NonSerialized] public Vector3 _originPos;
     
+    void Start(){
+        // ImportMap();
+    }
 
     public void ImportMap() {
         ReadMap(_imagePath);
@@ -36,7 +39,7 @@ public class MapReader : MonoBehaviour
         
         _originPos = new Vector3(
             (texture.height/2f*yaml.resolution)+(yaml.origin[1]), 
-            0f, 
+            0.2f, 
             ((texture.width/2f*yaml.resolution)+(yaml.origin[0]))*-1f
         );
         
