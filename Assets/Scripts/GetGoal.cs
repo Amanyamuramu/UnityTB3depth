@@ -79,6 +79,7 @@ public class GetGoal : MonoBehaviour
             _goalRotation = direction;
 
             //objに格納すると同時に生成
+            
             GameObject obj = Instantiate(_goalPrefab, _raycastHitPointOnButtonDown, Quaternion.Euler(_goalRotation));
             // GameObject obj = Instantiate(_goalPrefab, _raycastHit, Quaternion.Euler(_goalRotation));
 

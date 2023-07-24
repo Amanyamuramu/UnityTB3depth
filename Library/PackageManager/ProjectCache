@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638148354647186408
-    m_Hash: 2994564779
+      ticks: 638257043602046686
+    m_Hash: 2798069561
   m_LockFileStatus:
     m_FilePath: C:/Users/tetur/Documents/unity/Ros2DepthCameraVR/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638148354647296371
-    m_Hash: 3994934474
+      ticks: 638257043602168120
+    m_Hash: 870551243
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -104,6 +104,9 @@ m_PackageAssets:
         - 2.0.0-preview.22
         - 2.0.0
         - 2.0.1
+        - 2.0.3
+        - 2.0.4
+        - 2.0.5
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -149,6 +152,9 @@ m_PackageAssets:
         - 2.0.0-preview.22
         - 2.0.0
         - 2.0.1
+        - 2.0.3
+        - 2.0.4
+        - 2.0.5
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -249,6 +255,10 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
+        - 3.0.22
+        - 3.0.24
         compatible:
         - 1.0.2
         - 1.0.6
@@ -284,6 +294,10 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
+        - 3.0.22
+        - 3.0.24
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -360,6 +374,7 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
+        - 2.0.18
         compatible:
         - 1.0.2
         - 1.0.3
@@ -381,7 +396,8 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
-        verified: 2.0.17
+        - 2.0.18
+        verified: 2.0.18
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -487,6 +503,125 @@ m_PackageAssets:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
+        path: 
+    - packageId: com.unity.recorder@2.5.7
+      testable: 0
+      isDirectDependency: 1
+      version: 2.5.7
+      source: 1
+      resolvedPath: C:\Users\tetur\Documents\unity\Ros2DepthCameraVR\Library\PackageCache\com.unity.recorder@2.5.7
+      assetPath: Packages/com.unity.recorder
+      name: com.unity.recorder
+      displayName: Unity Recorder
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: asset
+      description: 'The Unity Recorder allows you to capture and save data from the
+        Unity Editor during Play Mode: animations, videos, images, audio, and more.'
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 2.0.0-preview.6
+        - 2.0.1-preview.1
+        - 2.0.2-preview.3
+        - 2.0.3-preview.1
+        - 2.1.0-preview.1
+        - 2.2.0-preview.4
+        - 2.3.0-preview.3
+        - 2.4.0-preview.1
+        - 2.5.0-pre.1
+        - 2.5.2
+        - 2.5.4
+        - 2.5.5
+        - 2.5.7
+        - 2.6.0-exp.3
+        - 2.6.0-exp.4
+        - 3.0.0-pre.1
+        - 3.0.0-pre.2
+        - 3.0.0
+        - 3.0.1
+        - 3.0.2
+        - 3.0.3
+        - 4.0.0-pre.1
+        - 4.0.0-pre.2
+        - 4.0.0-pre.3
+        - 4.0.0-pre.4
+        - 4.0.0-pre.5
+        - 4.0.0
+        - 4.0.1
+        - 5.0.0-pre.1
+        compatible:
+        - 2.0.0-preview.6
+        - 2.0.1-preview.1
+        - 2.0.2-preview.3
+        - 2.0.3-preview.1
+        - 2.1.0-preview.1
+        - 2.2.0-preview.4
+        - 2.3.0-preview.3
+        - 2.4.0-preview.1
+        - 2.5.0-pre.1
+        - 2.5.2
+        - 2.5.4
+        - 2.5.5
+        - 2.5.7
+        - 2.6.0-exp.3
+        - 2.6.0-exp.4
+        - 3.0.0-pre.1
+        - 3.0.0-pre.2
+        - 3.0.0
+        - 3.0.1
+        - 3.0.2
+        - 3.0.3
+        - 4.0.0-pre.1
+        - 4.0.0-pre.2
+        - 4.0.0-pre.3
+        verified: 2.5.7
+      dependencies:
+      - name: com.unity.timeline
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.timeline
+        version: 1.4.8
+      - name: com.unity.modules.director
+        version: 1.0.0
+      - name: com.unity.modules.audio
+        version: 1.0.0
+      - name: com.unity.modules.animation
+        version: 1.0.0
+      - name: com.unity.modules.particlesystem
+        version: 1.0.0
+      keywords:
+      - unity
+      - recorder
+      - recording
+      - capture
+      - video
+      - animation
+      - clip
+      - images
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 0
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637717102070000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.recorder.git
+        revision: a59deb20019b176e95dd8efa2f9b41b8e4a0bb96
         path: 
     - packageId: com.unity.robotics.ros-tcp-connector@https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector
       testable: 0
@@ -687,6 +822,10 @@ m_PackageAssets:
         - 1.3.1
         - 1.3.2
         - 1.3.3
+        - 1.3.4
+        - 1.3.5
+        - 1.3.7
+        - 1.3.8
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -701,6 +840,10 @@ m_PackageAssets:
         - 1.3.1
         - 1.3.2
         - 1.3.3
+        - 1.3.4
+        - 1.3.5
+        - 1.3.7
+        - 1.3.8
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -867,6 +1010,7 @@ m_PackageAssets:
         - 3.2.0-pre.2
         - 3.2.0-pre.3
         - 3.2.0-pre.4
+        - 3.2.0-pre.5
         - 4.0.0-pre.1
         - 4.0.0-pre.2
         compatible:
@@ -875,6 +1019,7 @@ m_PackageAssets:
         - 3.2.0-pre.2
         - 3.2.0-pre.3
         - 3.2.0-pre.4
+        - 3.2.0-pre.5
         verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
@@ -1001,6 +1146,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1008,9 +1154,12 @@ m_PackageAssets:
         - 1.7.2
         - 1.7.3
         - 1.7.4
+        - 1.7.5
         - 1.8.0
         - 1.8.1
         - 1.8.2
+        - 1.8.3
+        - 1.8.4
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1035,6 +1184,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1042,9 +1192,12 @@ m_PackageAssets:
         - 1.7.2
         - 1.7.3
         - 1.7.4
+        - 1.7.5
         - 1.8.0
         - 1.8.1
         - 1.8.2
+        - 1.8.3
+        - 1.8.4
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -1115,6 +1268,8 @@ m_PackageAssets:
       versions:
         all:
         - 1.0.0
+        - 3.0.0-exp.1
+        - 3.0.0-exp.3
         compatible:
         - 1.0.0
         verified: 1.0.0
@@ -1226,6 +1381,7 @@ m_PackageAssets:
         - 4.2.1
         - 4.3.1
         - 4.3.3
+        - 4.4.0
         compatible:
         - 4.0.1
         - 4.0.3
@@ -1239,6 +1395,7 @@ m_PackageAssets:
         - 4.2.1
         - 4.3.1
         - 4.3.3
+        - 4.4.0
         verified: 4.0.7
       dependencies:
       - name: com.unity.modules.subsystems
@@ -1382,6 +1539,8 @@ m_PackageAssets:
         - 3.2.2
         - 3.2.3-pre.1
         - 3.2.3
+        - 3.3.0
+        - 4.0.0
         compatible:
         - 1.10.0
         - 1.10.1-preview.3
@@ -3312,6 +3471,8 @@ m_PackageAssets:
         - 1.0.6
         - 2.0.2
         - 2.0.3
+        - 2.0.4
+        - 2.0.5
         compatible:
         - 0.1.5-preview
         - 0.1.6-preview
@@ -3321,6 +3482,8 @@ m_PackageAssets:
         - 1.0.6
         - 2.0.2
         - 2.0.3
+        - 2.0.4
+        - 2.0.5
         verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
@@ -3455,6 +3618,8 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
+        - 3.2.1
         compatible:
         - 1.0.0-preview.2
         - 1.0.0-preview.3
@@ -3470,6 +3635,8 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
+        - 3.2.1
         verified: 2.0.2
       dependencies: []
       resolvedDependencies: []
