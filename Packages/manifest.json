@@ -1,14 +1,18 @@
 {
   "dependencies": {
-    "com.unity.collab-proxy": "1.7.1",
+    "com.unity.collab-proxy": "1.13.5",
     "com.unity.ide.rider": "2.0.7",
     "com.unity.ide.visualstudio": "2.0.11",
+<<<<<<< HEAD
     "com.unity.ide.vscode": "1.2.3",
     "com.unity.recorder": "2.5.7",
+=======
+    "com.unity.ide.vscode": "1.2.4",
+>>>>>>> 257e61200f0a56bb7cc08ba52da27fae908ace73
     "com.unity.robotics.ros-tcp-connector": "https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector",
     "com.unity.robotics.urdf-importer": "https://github.com/Unity-Technologies/URDF-Importer.git?path=/com.unity.robotics.urdf-importer",
     "com.unity.robotics.visualizations": "https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.visualizations",
-    "com.unity.test-framework": "1.1.27",
+    "com.unity.test-framework": "1.1.29",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.4.8",
     "com.unity.ugui": "1.0.0",

@@ -33,6 +33,7 @@ public class GetGoal : MonoBehaviour
     
     void Start()
     {
+        _goalPublisher.SendInitialPose();
         _arrowObj.SetActive(false);
     }
 
@@ -64,7 +65,7 @@ public class GetGoal : MonoBehaviour
         if (_isTriggerOn)
         {
             Vector2 stickInput = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick, OVRInput.Controller.RTouch);
-            var angle = Mathf.Atan2(stickInput.x, stickInput.y) * Mathf.Rad2Deg;
+            var angle = (Mathf.Atan2(stickInput.x, stickInput.y))* Mathf.Rad2Deg;
             direction = new Vector3(0f,angle,0f);
             _arrowObj.transform.rotation = Quaternion.Euler(direction);
 
